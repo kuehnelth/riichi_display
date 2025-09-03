@@ -1,0 +1,2 @@
+GetCurrentStateResponse.sessions 	max_size:4
+CurrentSession.players	max_size:4
