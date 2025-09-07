@@ -8,6 +8,7 @@
 #include <GxEPD2_3C.h>
 #include <Fonts/FreeMonoBold9pt7b.h>
 #include <Fonts/FreeMonoBold12pt7b.h>
+#include <Fonts/FreeMonoBold24pt7b.h>
 
 // ESP32-C3 CS(SS)=7,SCL(SCK)=4,SDA(MOSI)=6,BUSY=3,RES(RST)=2,DC=1
 #define CS_PIN (5)
@@ -79,66 +80,73 @@ void init_display(void)
 	display.hibernate();
 }
 
-char names[][16] = { "Player 1", "Player 2", "Player 3", "Player 4" };
+char names[][32] = { "Player 1", "Player 2", "Player 3", "Player 4" };
 int scores[4] = { 25000, 0, -25000, 100000 };
+
+const char winds[] = {'E', 'S', 'W', 'N'};
 
 void showPartialUpdate()
 {
-	// some useful background
-	// use asymmetric values for test
-	uint16_t box_x = 10;
-	uint16_t box_y = 15;
-	uint16_t box_w = 70;
-	uint16_t box_h = 20;
 	int16_t tbx, tby;
 	uint16_t tbw, tbh;
 
 	int16_t offsets_x[] = {50, 0, 50, 0};
 	int16_t offsets_y[] = {0, 50, 0, 50};
-	float value = 13.95;
-	uint16_t incr = display.epd2.hasFastPartialUpdate ? 1 : 3;
-	display.setFont(&FreeMonoBold9pt7b);
+	uint16_t margin = 5;
+	uint16_t dh = display.height();
+	uint16_t dw = display.height(); // make the usable display square
+
 	display.setTextColor(GxEPD_BLACK);
 
 	display.fillRect(0, 0, display.width(), display.height(), GxEPD_WHITE);
 
 
 	for (uint16_t r = 0; r < 4; r++) {
-		//uint16_t x = box_x + offsets_x[r];
 		uint16_t x;
 		uint16_t y;
-		GFXcanvas1 canvas(box_w, box_h);
+
+		uint16_t playerId = (3 - r + rot) % 4;
+
 		display.setRotation(r);
-		const char *name = names[(3 - r + rot) % 4];
+		const char *name = names[playerId];
+		char buf[32] = {};
 
 		display.setFont(&FreeMonoBold9pt7b);
 		display.getTextBounds(name, 0, 0, &tbx, &tby, &tbw, &tbh);
-		x = offsets_x[r] + ((300 - tbw) / 2) - tbx;
-		y = 300 - 5 - tbh;
+		x = offsets_x[r] + ((dw - tbw) / 2) - tbx;
+		y = dh - margin - tbh;
 		uint16_t cursor_y = y + tbh - 6;
 		Serial.printf("rot %d x %d y %d cy %d\n", rot, x, y, cursor_y);
 
-		//display.fillRect(x, y, box_w, box_h, GxEPD_WHITE);
 		display.setCursor(x, cursor_y + offsets_y[r]);
 		display.print(name);
 
-
 		display.setFont(&FreeMonoBold12pt7b);
-		char score[32] = {};
-		sprintf(score, "%d", scores[(3 - r + rot) % 4]);
-		display.getTextBounds(score, 0, 0, &tbx, &tby, &tbw, &tbh);
-		x = offsets_x[r] + ((300 - tbw) / 2) - tbx;
-		y = 300 - 5 - tbh;
+		sprintf(buf, "%d", scores[playerId]);
+		display.getTextBounds(buf, 0, 0, &tbx, &tby, &tbw, &tbh);
+		x = offsets_x[r] + ((dw - tbw) / 2) - tbx;
+		y = dh - margin - tbh;
 		cursor_y = y + tbh - 6 - 15;
 		Serial.printf("x %d y %d cy %d\n", x, y, cursor_y);
 
-		//display.fillRect(x, y, box_w, box_h, GxEPD_WHITE);
 		display.setCursor(x, cursor_y + offsets_y[r]);
-		display.print(score);
+		display.print(buf);
 
+		display.setFont(&FreeMonoBold24pt7b);
+		sprintf(buf, "%c", winds[playerId]);
+		display.getTextBounds(buf, 0, 0, &tbx, &tby, &tbw, &tbh);
+		Serial.printf("tbx %d tby %d tbw %d tbh %d wind %s\n", tbx, tby, tbw, tbh, buf);
+		x = offsets_x[r] + (dw - tbw) - tbx;
+		y = dh - margin;
+		cursor_y = y;
+		Serial.printf("x %d y %d cy %d wind %s\n", x, y, cursor_y, buf);
+		display.setCursor(x, cursor_y + offsets_y[r]);
+		display.print(buf);
+		/*
 		x = offsets_x[r] + ((300 - 11) / 2) - 0;
 		y = offsets_y[r] + 300 - 5 - 12 - 40;
 		display.drawBitmap(x, y, epd_bitmap_allArray[(3 - r + rot) % 4], 11, 12, GxEPD_BLACK);
+		*/
 	}
 	display.nextPage();
 }
