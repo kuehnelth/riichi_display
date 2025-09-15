@@ -5,87 +5,29 @@
 #define ENABLE_GxEPD2_GFX 0
 
 #include <GxEPD2_BW.h>
-#include <GxEPD2_3C.h>
-#include <Fonts/FreeMonoBold9pt7b.h>
-#include <Fonts/FreeMonoBold12pt7b.h>
-#include <Fonts/FreeMonoBold24pt7b.h>
+#include "MPLUS2_Regular24pt7b.h"
+#include "MPLUS2_Regular9pt7b.h"
+#include "MPLUS2_Medium12pt7b.h"
 
-// ESP32-C3 CS(SS)=7,SCL(SCK)=4,SDA(MOSI)=6,BUSY=3,RES(RST)=2,DC=1
-#define CS_PIN (5)
-#define BUSY_PIN (4)
-#define RES_PIN (17)
-#define DC_PIN (16)
+#include "game_state.h"
 
 // 4.2'' EPD Module
 GxEPD2_BW<GxEPD2_420_GDEY042T81, GxEPD2_420_GDEY042T81::HEIGHT> display(
 	GxEPD2_420_GDEY042T81(/*CS=5*/ CS_PIN, /*DC=*/DC_PIN, /*RES=*/RES_PIN, /*BUSY=*/BUSY_PIN)); // 400x300, SSD1683
 
-#include "display.h"
+typedef enum {
+LEFT,
+CENTER,
+RIGHT,
+} alignH;
 
-// 'E', 11x12px
-const unsigned char epd_bitmap_E [] PROGMEM = {
-	0x04, 0x00, 0xff, 0xe0, 0x04, 0x00, 0x7f, 0xc0, 0x44, 0x40, 0x7f, 0xc0, 0x44, 0x40, 0x3f, 0xc0,
-	0x0e, 0x00, 0x15, 0x00, 0x24, 0x80, 0xc4, 0x60
-};
-// 'S', 11x12px
-const unsigned char epd_bitmap_S [] PROGMEM = {
-	0x04, 0x00, 0x04, 0x00, 0xff, 0xe0, 0x08, 0x00, 0xff, 0xe0, 0x91, 0x20, 0x8a, 0x20, 0xbf, 0xa0,
-	0x84, 0x20, 0xbf, 0xa0, 0x84, 0x20, 0x84, 0x40
-};
-// 'W', 11x12px
-const unsigned char epd_bitmap_W [] PROGMEM = {
-	0x00, 0x00, 0xff, 0xe0, 0x09, 0x00, 0x09, 0x00, 0xff, 0xe0, 0x89, 0x20, 0x91, 0x20, 0x91, 0x20,
-	0xe0, 0xe0, 0x80, 0x20, 0x80, 0x20, 0x7f, 0xe0
-};
-// 'N', 11x12px
-const unsigned char epd_bitmap_N [] PROGMEM = {
-	0x12, 0x00, 0x12, 0x00, 0x12, 0x00, 0x12, 0x00, 0xf2, 0x60, 0x13, 0x80, 0x12, 0x00, 0x12, 0x00,
-	0x32, 0x00, 0xd2, 0x00, 0x12, 0x20, 0x11, 0xc0
-};
+typedef enum {
+TOP,
+MIDDLE,
+BOTTOM,
+} alignV;
 
-// Array of all bitmaps for convenience. (Total bytes used to store images in PROGMEM = 192)
-const int epd_bitmap_allArray_LEN = 4;
-const unsigned char* epd_bitmap_allArray[4] = {
-	epd_bitmap_E,
-	epd_bitmap_S,
-	epd_bitmap_W,
-	epd_bitmap_N,
-};
-
-void test(void);
-void showPartialUpdate();
-
-int rot = 0;
-void init_display(void)
-{
-	pinMode(CS_PIN, OUTPUT);
-	pinMode(RES_PIN, OUTPUT);
-	pinMode(DC_PIN, OUTPUT);
-
-	display.init(115200, true, 50, false);
-	display.firstPage();
-	display.nextPage();
-	//delay(10000);
-	display.setPartialWindow(50, 0, 300, 300);
-	if (display.epd2.hasFastPartialUpdate) {
-		while (true) {
-			Serial.println("show partial update");
-			showPartialUpdate();
-			break;
-			//delay(10000);
-
-			//rot = (++rot)%4;
-		}
-	}
-	display.hibernate();
-}
-
-char names[][32] = { "Player 1", "Player 2", "Player 3", "Player 4" };
-int scores[4] = { 25000, 0, -25000, 100000 };
-
-const char winds[] = {'E', 'S', 'W', 'N'};
-
-void showPartialUpdate()
+void display_print(const GFXfont *f, const char *s, alignH ah, alignV av, uint16_t offset_h, uint16_t offset_v)
 {
 	int16_t tbx, tby;
 	uint16_t tbw, tbh;
@@ -93,60 +35,109 @@ void showPartialUpdate()
 	int16_t offsets_x[] = {50, 0, 50, 0};
 	int16_t offsets_y[] = {0, 50, 0, 50};
 	uint16_t margin = 5;
-	uint16_t dh = display.height();
-	uint16_t dw = display.height(); // make the usable display square
+	uint16_t dh = min(display.height(), display.width());
+	uint16_t dw = dh; // make the usable display square
+	uint16_t r = display.getRotation();
+	uint16_t x = offsets_x[r];
+	uint16_t y = offsets_y[r];
+
+	display.setFont(f);
+	display.getTextBounds(s, 0, 0, &tbx, &tby, &tbw, &tbh);
+
+	switch (ah) {
+		case LEFT:
+			x += margin + offset_v;
+			break;
+		case CENTER:
+			x += ((dw - tbw) / 2) - tbx;
+			break;
+		case RIGHT:
+			x += (dw - tbw) - tbx - margin;
+			break;
+	}
+	switch (av) {
+		case TOP:
+			y += margin + offset_v;
+			break;
+		case MIDDLE:
+			y += ((dh - tbh) / 2) - tby + offset_v;
+			break;
+		case BOTTOM:
+			y += dh - margin - offset_v;
+			break;
+	}
+	Serial.printf("display_print %s x %d y %d r %d\n", s, x, y, r);
+	display.setCursor(x, y);
+	display.print(s);
+}
+
+
+
+#include "display.h"
+
+void init_display(void)
+{
+	pinMode(CS_PIN, OUTPUT);
+	pinMode(RES_PIN, OUTPUT);
+	pinMode(DC_PIN, OUTPUT);
+	Serial.printf("CS %d res %d DC %d\n", CS_PIN, RES_PIN, DC_PIN);
+
+	display.init(115200, true, 50, false);
+	//display.firstPage();
+	//display.nextPage();
+	display.setPartialWindow(50, 0, 300, 300);
+	if (display.epd2.hasFastPartialUpdate) {
+		while (true) {
+			Serial.println("show partial update");
+			showPartialUpdate();
+			break;
+		}
+	}
+	display.hibernate();
+}
+
+char names[][32] = { "Player 1", "Player 2", "Player 3", "Player 4" };
+int scores[4] = { 30000, 27000, 10000, 33000 };
+int state[3] = {0, 0, 0}; //round (0==E1, 1==E2,.. ), riichi count, honba count
+
+const char winds[] = {'E', 'S', 'W', 'N'};
+
+void showPartialUpdate()
+{
+	char buf[32] = {};
+
+	display.setRotation(0);
 
 	display.setTextColor(GxEPD_BLACK);
 
 	display.fillRect(0, 0, display.width(), display.height(), GxEPD_WHITE);
 
+	sprintf(buf, "%c%d", winds[(game_state.round - 1 ) / 4], 1 + ((game_state.round - 1) % 4));
+	display_print(&MPLUS2_Regular24pt7b, buf, CENTER, MIDDLE, 0, 0);
+
+	sprintf(buf, "%d Riichi", game_state.riichi_count);
+	display_print(&MPLUS2_Regular9pt7b, buf, CENTER, MIDDLE, 0, 28);
+	sprintf(buf, "%d Honba", game_state.honba_count);
+	display_print(&MPLUS2_Regular9pt7b, buf, CENTER, MIDDLE, 0, 42);
+	//display_print(&FreeMono9pt7b, buf, CENTER, MIDDLE, 0, 26);
 
 	for (uint16_t r = 0; r < 4; r++) {
-		uint16_t x;
-		uint16_t y;
-
-		uint16_t playerId = (3 - r + rot) % 4;
+		uint16_t playerId = (3 - r) % 4;
 
 		display.setRotation(r);
-		const char *name = names[playerId];
-		char buf[32] = {};
+		Player *player = &game_state.players[playerId];
+		const char *name = player->name; //names[playerId];
 
-		display.setFont(&FreeMonoBold9pt7b);
-		display.getTextBounds(name, 0, 0, &tbx, &tby, &tbw, &tbh);
-		x = offsets_x[r] + ((dw - tbw) / 2) - tbx;
-		y = dh - margin - tbh;
-		uint16_t cursor_y = y + tbh - 6;
-		Serial.printf("rot %d x %d y %d cy %d\n", rot, x, y, cursor_y);
-
-		display.setCursor(x, cursor_y + offsets_y[r]);
-		display.print(name);
-
-		display.setFont(&FreeMonoBold12pt7b);
-		sprintf(buf, "%d", scores[playerId]);
-		display.getTextBounds(buf, 0, 0, &tbx, &tby, &tbw, &tbh);
-		x = offsets_x[r] + ((dw - tbw) / 2) - tbx;
-		y = dh - margin - tbh;
-		cursor_y = y + tbh - 6 - 15;
-		Serial.printf("x %d y %d cy %d\n", x, y, cursor_y);
-
-		display.setCursor(x, cursor_y + offsets_y[r]);
-		display.print(buf);
-
-		display.setFont(&FreeMonoBold24pt7b);
-		sprintf(buf, "%c", winds[playerId]);
-		display.getTextBounds(buf, 0, 0, &tbx, &tby, &tbw, &tbh);
-		Serial.printf("tbx %d tby %d tbw %d tbh %d wind %s\n", tbx, tby, tbw, tbh, buf);
-		x = offsets_x[r] + (dw - tbw) - tbx;
-		y = dh - margin;
-		cursor_y = y;
-		Serial.printf("x %d y %d cy %d wind %s\n", x, y, cursor_y, buf);
-		display.setCursor(x, cursor_y + offsets_y[r]);
-		display.print(buf);
-		/*
-		x = offsets_x[r] + ((300 - 11) / 2) - 0;
-		y = offsets_y[r] + 300 - 5 - 12 - 40;
-		display.drawBitmap(x, y, epd_bitmap_allArray[(3 - r + rot) % 4], 11, 12, GxEPD_BLACK);
-		*/
+		display_print(&MPLUS2_Regular9pt7b, name, CENTER, BOTTOM, 0, 6);
+		if (game_state.active != 0xff) {
+			int32_t score_diff = player->score - game_state.players[game_state.active].score;
+			sprintf(buf, "%c%d", score_diff > 0 ? '+' : ' ', score_diff);
+		} else {
+			sprintf(buf, "%d", player->score);
+		}
+		display_print(&MPLUS2_Medium12pt7b, buf, CENTER, BOTTOM, 0, 21);
+		sprintf(buf, "%c", winds[player->wind]);
+		display_print(&MPLUS2_Regular24pt7b, buf, RIGHT, BOTTOM, 6, 6);
 	}
 	display.nextPage();
 }
