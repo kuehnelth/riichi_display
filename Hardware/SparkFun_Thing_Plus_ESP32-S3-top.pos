@@ -1,0 +1,37 @@
+### Footprint positions - created on 2025-10-28T22:50:02+0100 ###
+### Printed by KiCad version 9.0.4
+## Unit = mm, Angle = deg.
+## Side : top
+# Ref     Val                   Package                         PosX       PosY       Rot  Side
+C1        22uF                  C_0603_1608Metric             1.9050    55.5625    0.0000  top
+C2        0.1uF                 C_0402_1005Metric            21.5900     9.5250  -90.0000  top
+C3        10uF                  C_0402_1005Metric             6.6675     9.5250  -90.0000  top
+C6        1.0uF                 C_0402_1005Metric            17.1450    25.7175  -90.0000  top
+C7        4.7uF                 C_0402_1005Metric             1.9050    53.9750  180.0000  top
+C9        4.7uF                 C_0603_1608Metric            11.4300    14.6050   90.0000  top
+C10       2.2uF                 C_0402_1005Metric             5.7150    27.9400    0.0000  top
+C12       4.7uF                 C_0402_1005Metric            18.4150    14.6050  -90.0000  top
+C13       1.0uF                 C_0402_1005Metric             9.5250    26.6700    0.0000  top
+C14       2.2uF                 C_0402_1005Metric            10.4775     7.6200  180.0000  top
+FID4      Fiducial_0.5mm        Fiducial_0.5mm_Mask1mm       17.1450     0.6350    0.0000  top
+G3        OSHW_Logo             Creative_Commons_License      6.9850   -11.4300    0.0000  top
+J1        USB_C_Receptacle      USB-C_16                     11.4300     6.3462    0.0000  top
+J3        JST_2mm_LiPo          JST_SMD_2.0mm-2               3.8100    18.4150   90.0000  top
+R8        10k                   R_0402_1005Metric            18.4150    25.7175   90.0000  top
+R10       5.1k                  R_0402_1005Metric            17.1450     4.7625  -90.0000  top
+R11       5.1k                  R_0402_1005Metric             5.7150     4.7625   90.0000  top
+R13       100k                  R_0402_1005Metric             5.7150    23.4950  180.0000  top
+R16       2.0k                  R_0402_1005Metric            14.9225    12.0650    0.0000  top
+R17       10k                   R_0402_1005Metric             9.8425    12.7000  -90.0000  top
+R19       100k                  R_0402_1005Metric             7.9375    13.3350  180.0000  top
+ST1       Standoff              Standoff                      2.5400     2.5400    0.0000  top
+ST3       Standoff              Standoff                     20.3200     2.5400    0.0000  top
+SW2       SMD_4.6x2.8mm_h2.5mm  Push_SMD_4.6x2.8mm_h2.5mm    13.3350    25.7175    0.0000  top
+U1        RT9080-3.3            SOT23-5                       9.5250     9.5250  180.0000  top
+U2        DT1042-04SO           SOT23-6                      14.9225     9.5250  180.0000  top
+U3        ESP32-S3-MINI         ESP32-MINI                   11.4300    45.7200    0.0000  top
+U4        MAX17048              DFN-8                        19.3675     9.5250  180.0000  top
+U5        MCP73831              SOT23-5                      14.9225    14.6050  180.0000  top
+U6        RT9080-3.3            SOT23-5                       5.7150    25.7175    0.0000  top
+U9        ~                     Ordering_Instructions        33.0200    50.8000    0.0000  top
+## End
