@@ -1,8 +1,6 @@
 {
   "Layers": {
     "F.Cu": "true",
-    "In1.Cu": "false",
-    "In2.Cu": "false",
     "B.Cu": "true",
     "F.Paste": "true",
     "B.Paste": "true",
@@ -71,8 +69,6 @@
   },
   "Edges": {
     "F.Cu": "false",
-    "In1.Cu": "false",
-    "In2.Cu": "false",
     "B.Cu": "false",
     "F.Paste": "false",
     "B.Paste": "false",
