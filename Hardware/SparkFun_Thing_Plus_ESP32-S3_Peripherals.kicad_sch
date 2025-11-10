@@ -4190,7 +4190,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/schematic-checklist.html#clock-source"
+	(text "https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32s3/schematic-checklist.html#clock-source\nhttps://stackoverflow.com/q/75392341"
 		(exclude_from_sim no)
 		(at 61.468 86.36 0)
 		(effects
