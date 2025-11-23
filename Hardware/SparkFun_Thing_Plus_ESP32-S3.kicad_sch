@@ -6557,6 +6557,28 @@
 			)
 		)
 	)
+	(global_label "ESP2{slash}RES"
+		(shape input)
+		(at 74.93 93.98 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "671937e9-505e-4aa4-93a7-b08b982e6fa5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 87.7122 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "ESP19{slash}D-"
 		(shape input)
 		(at 74.93 137.16 0)
@@ -6843,6 +6865,28 @@
 			)
 		)
 	)
+	(global_label "ESP17{slash}DC"
+		(shape input)
+		(at 74.93 132.08 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b89ff3a5-e61c-4077-af8e-be75941c4eda")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 87.8332 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "ESP~{RST}"
 		(shape input)
 		(at 21.59 138.43 180)
@@ -6922,6 +6966,28 @@
 		(uuid "e1e2ffcc-68b9-4c27-8124-62b276432bdc")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 94.3041 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ESP1{slash}BUSY"
+		(shape input)
+		(at 74.93 91.44 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e31d72a9-8776-4d7e-81b9-c6057c30ea25")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 88.9823 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
