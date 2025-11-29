@@ -1,8 +1,0 @@
-### Footprint positions - created on 2025-10-28T22:50:02+0100 ###
-### Printed by KiCad version 9.0.4
-## Unit = mm, Angle = deg.
-## Side : bottom
-# Ref     Val             Package                      PosX       PosY       Rot  Side
-FID1      Fiducial_0.5mm  Fiducial_0.5mm_Mask1mm    17.1450     0.6350  180.0000  bottom
-JP2       ~               Jumper_2_NC_Trace         14.9225    24.1300   90.0000  bottom
-## End

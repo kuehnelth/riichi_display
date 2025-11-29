@@ -227,7 +227,7 @@
 		(property ki_fp_filters "MountingHole*")
 		(path "/1ec7d60a-af60-430c-82f4-bd6c90df7aed")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
@@ -344,7 +344,7 @@
 		(property ki_fp_filters "DFN*1EP*3x3mm*P0.5mm*")
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/7abd992b-2994-4497-ad90-2f84f5dead82")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(attr smd dnp)
 		(fp_poly
 			(pts
@@ -794,7 +794,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/55fa8c2b-18d2-4eee-a24f-dadf28450e5f")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(attr through_hole exclude_from_bom dnp)
 		(fp_line
 			(start 1.11 -1.33)
@@ -1309,7 +1309,7 @@
 		(property ki_fp_filters "MountingHole*")
 		(path "/8a2e5997-7c68-46c2-bc87-2271fccca836")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
@@ -1421,7 +1421,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/deafbb4b-d5e7-4e74-b635-cf8894f72e18")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.153641 -0.38)
@@ -1659,7 +1659,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/fd2e7ca5-2405-4cf2-8b19-52235c1d67ee")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 -0.36)
@@ -1957,7 +1957,7 @@
 		)
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/4047e289-b6a3-4085-a660-a8dcb8a7391a")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(fp_line
 			(start -1.275 -2.55)
 			(end -2.17 -1.655)
@@ -2435,7 +2435,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/5d65e785-0509-419d-928c-feb6b68e035d")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.153641 0.38)
@@ -2634,7 +2634,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/5942c740-5dc3-4c93-902d-503853da6e6b")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(attr through_hole exclude_from_bom dnp)
 		(fp_line
 			(start -10.09 1.33)
@@ -3234,7 +3234,7 @@
 		)
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/cee9a36e-031a-47dc-a4dd-ea2adb7b960f")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(fp_line
 			(start -2.55 -2.05)
 			(end 2.55 -2.05)
@@ -3810,7 +3810,7 @@
 		)
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/ccf5d395-1142-426d-8fa4-b88bd8e8a343")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(fp_line
 			(start 0.508 0.762)
 			(end -0.508 0.762)
@@ -4033,7 +4033,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/29dbfb62-a3b7-40c7-9966-e83270283155")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 0.36)
@@ -4232,7 +4232,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/1f1c8b29-42ba-4800-8041-303395ffdc30")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(attr through_hole exclude_from_bom dnp)
 		(fp_line
 			(start 1.11 -1.33)
@@ -4845,7 +4845,7 @@
 		)
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/1f9db190-37a8-45b5-be9a-81cfde42be31")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(fp_line
 			(start 2.17 1.655)
 			(end 1.275 2.55)
@@ -5396,7 +5396,7 @@
 		)
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/0c3ea9d4-144f-43c9-9939-f4a79b45658b")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(fp_line
 			(start -1.8175 1.0425)
 			(end -2.224 0.6365)
@@ -5765,7 +5765,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/c53f71fb-5033-415e-97bb-63cf44d82d30")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 0.36)
@@ -5965,7 +5965,7 @@
 		(property ki_fp_filters "MountingHole*")
 		(path "/45d5c9a9-2679-4b18-8568-b6c938d05f23")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
@@ -6163,7 +6163,7 @@
 		)
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/c3a086f8-de46-4cd3-97e3-ce5df4eb1294")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(fp_line
 			(start 1.275 -2.55)
 			(end 2.17 -1.655)
@@ -6714,7 +6714,7 @@
 		)
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/f0778549-4bd0-4173-821b-2f22659f0594")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(fp_line
 			(start -2.224 -0.6335)
 			(end -1.843 -1.0145)
@@ -7143,7 +7143,7 @@
 		)
 		(path "/0c5a8fe1-9c1f-428c-bd67-0d47897f012e")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(fp_line
 			(start -2.55 -1.1685)
 			(end -2.55 1.1685)
@@ -7621,7 +7621,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/474df373-b3f7-4f37-a516-cbf2e25dd05d")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.153641 0.38)
@@ -7833,7 +7833,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/e4954d54-a519-430c-a13f-6fcac1c18798")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.153641 -0.38)
@@ -8131,7 +8131,7 @@
 		)
 		(path "/46a8b420-db0b-4c52-b25e-2e70e5a0a502")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(fp_line
 			(start -2.55 -1.1685)
 			(end -2.55 1.1685)
@@ -8695,7 +8695,7 @@
 		)
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/bc4d49b6-dfb6-40c4-8025-df59fbca5442")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(fp_line
 			(start -2.17 1.655)
 			(end -1.275 2.55)
@@ -9246,7 +9246,7 @@
 		)
 		(path "/31692f84-d6f0-4146-96ac-ccab82c20941")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(fp_line
 			(start -2.596 -1.426)
 			(end 2.596 -1.426)
@@ -9563,7 +9563,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/c6f4814b-13a7-436b-ace4-70825b08f49e")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 -0.36)
@@ -9751,7 +9751,7 @@
 		(property ki_fp_filters "Connector*:*_2x??_*")
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/7e019cb2-58f4-45a3-8cff-5ae74c104567")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start 1.33 -1.33)
@@ -10106,7 +10106,7 @@
 		(property ki_fp_filters "MountingHole*")
 		(path "/5c4845e8-18cb-490d-8a0a-c733d174acb4")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
@@ -10291,7 +10291,7 @@
 		)
 		(path "/4690688a-862e-4f26-b1e9-b1c325d4343d")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(fp_line
 			(start 0.8585 1.526)
 			(end -0.8585 1.526)
@@ -10590,7 +10590,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/5a4e06cf-7901-4ded-8740-c7bfc6a828dd")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.237258 -0.5225)
@@ -10864,7 +10864,7 @@
 		)
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/25389858-6a11-4d57-84eb-f80f445c35bc")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(fp_line
 			(start -2.224 -0.6335)
 			(end -1.843 -1.0145)
@@ -11293,7 +11293,7 @@
 		)
 		(path "/62a809cf-5bb1-4425-be78-0992b5d7d2dc")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(fp_line
 			(start 1.5265 0.889)
 			(end 1.5265 -0.889)
@@ -11703,7 +11703,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/43e909f5-1b78-4de3-bc2a-ff2f30b9f004")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(fp_line
 			(start -4.064 3.175)
 			(end -4.064 -0.719)
@@ -12068,7 +12068,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/12645e85-ab08-4132-9b9a-70a595bee1c5")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.153641 -0.38)
@@ -12267,7 +12267,7 @@
 		(property ki_fp_filters "Connector*:*_1x??_*")
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/46257e87-903e-4e10-8b70-3a7d94eac078")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(attr through_hole exclude_from_bom dnp)
 		(fp_line
 			(start -10.09 1.33)
@@ -12798,7 +12798,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/4ac3c00d-11ec-4523-88e1-11527fcc1ff6")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.237258 0.5225)
@@ -13025,7 +13025,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/75f31ed7-b1c8-44ed-91b2-5883fd971ae2")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 -0.36)
@@ -13263,7 +13263,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/753b3ad0-eb12-4295-a6d0-15d9a0804c31")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 0.36)
@@ -13463,7 +13463,7 @@
 		(property ki_fp_filters "MountingHole*")
 		(path "/9b9398fc-b188-4b46-b24b-0b3461e33ef1")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
@@ -13605,7 +13605,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/b7331a05-943d-44ff-bb46-d846e415e5b3")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 0.36)
@@ -13879,7 +13879,7 @@
 		)
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/9f1f19ca-2469-48b8-9e67-e0d20e63e304")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(fp_line
 			(start -0.226 0.4985)
 			(end -1.0165 0.4985)
@@ -14186,7 +14186,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/48bb408e-cb82-491e-99b2-ddfe4b4b1cc6")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.153641 0.38)
@@ -14398,7 +14398,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/3e9d2dde-e8df-43a3-bd5c-b31fcad807f5")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.153641 -0.38)
@@ -14683,7 +14683,7 @@
 		)
 		(path "/d431e394-9074-4f36-bcca-352efcb5e6c2")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(fp_line
 			(start -4.469 1.3755)
 			(end -4.469 -0.487)
@@ -15666,7 +15666,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/56d3fd07-d919-4f39-8036-4e3100bfaa12")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 -0.36)
@@ -15908,7 +15908,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/c2a634b5-8f1f-4a67-81bf-095d2053f405")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 0.36)
@@ -16182,7 +16182,7 @@
 		)
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/8d8686d0-6c37-4fbf-ad93-639d543e4f4a")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(fp_line
 			(start 1.0165 -0.4985)
 			(end 0.226 -0.4985)
@@ -16476,7 +16476,7 @@
 		(property ki_fp_filters "MountingHole*")
 		(path "/6c24b4d6-620e-4e3a-890b-663603f0aa31")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
@@ -16588,7 +16588,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/d520ec03-4e40-4afd-9842-809bbf315ff0")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.153641 0.38)
@@ -16874,7 +16874,7 @@
 		)
 		(path "/f72f674c-b8f6-48b3-8888-b07b9b03b171")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(attr exclude_from_bom dnp)
 		(fp_line
 			(start -9 -16.395)
@@ -18362,7 +18362,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/2a45ec3d-a8fe-44c3-8fcb-f7b05b0c0f20")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.14058 0.51)
@@ -18600,7 +18600,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/aabf65fc-f1ab-4c6f-b8c4-e8b51a37c408")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 0.36)
@@ -18812,7 +18812,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/71896d25-4aea-4f74-9203-d7e2799941ab")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.153641 0.38)
@@ -19097,7 +19097,7 @@
 		)
 		(path "/21759253-85a3-4fd9-9a13-2d633d963538")
 		(sheetname "/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3.kicad_sch")
+		(sheetfile "riichi_compass.kicad_sch")
 		(fp_line
 			(start -1.143 -0.508)
 			(end -1.143 0.508)
@@ -19532,7 +19532,7 @@
 		)
 		(path "/d6c156a2-e465-4c7e-997f-19b88b87b971/c7c683c3-a850-4eb3-86a6-5d7e0869c80e")
 		(sheetname "/Peripherals/")
-		(sheetfile "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch")
+		(sheetfile "riichi_compass_Peripherals.kicad_sch")
 		(fp_line
 			(start -1.8175 1.0425)
 			(end -2.224 0.6365)

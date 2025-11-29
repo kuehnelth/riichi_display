@@ -5,10 +5,9 @@
 	(uuid "e3dd3ae4-244d-4cba-9cca-5d2abf83f29a")
 	(paper "USLetter")
 	(title_block
-		(title "ESP32 Thing Plus ESP32-S3")
-		(date "2023-07-28")
-		(rev "v10")
-		(comment 1 "Designed by: N.Seidle")
+		(title "riichi compass")
+		(date "2025-11-30")
+		(rev "v1")
 	)
 	(lib_symbols
 		(symbol "EasyEDA_Lib:ESP32-S3-WROOM-1"
@@ -7111,7 +7110,7 @@
 			(uuid "fefac7f4-fdfc-4114-9770-5efe7d17e6e0")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR016")
 					(unit 1)
@@ -7241,7 +7240,7 @@
 			(uuid "9249ab53-3147-46ec-84ec-e3ee8fc43830")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "BOOT1")
 					(unit 1)
@@ -7370,7 +7369,7 @@
 			(uuid "601284f8-f352-4f1d-87d2-69978ba178b4")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR014")
 					(unit 1)
@@ -7492,7 +7491,7 @@
 			(uuid "d3ebbbd3-a5d3-46b3-8302-920850bb4c24")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "U8")
 					(unit 1)
@@ -7589,7 +7588,7 @@
 			(uuid "692ad73e-c96e-4997-8aee-cbffc1fbd2e6")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "C1")
 					(unit 1)
@@ -7654,7 +7653,7 @@
 			(uuid "2c550025-4ae8-4cf8-a9b0-2366c4ab3603")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR0101")
 					(unit 1)
@@ -7767,7 +7766,7 @@
 			(uuid "5e5343f8-8ce5-40db-855f-a247644e94f2")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "D2")
 					(unit 1)
@@ -7838,7 +7837,7 @@
 					(unit 1)
 				)
 			)
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR0115")
 					(unit 1)
@@ -7903,7 +7902,7 @@
 			(uuid "ef1351a5-2c16-40a5-97a8-90c933d2a326")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR017")
 					(unit 1)
@@ -7967,7 +7966,7 @@
 			)
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "H5")
 					(unit 1)
@@ -8085,7 +8084,7 @@
 			(uuid "d97206ec-92db-4260-8a3a-c4880f56d068")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "Q1")
 					(unit 1)
@@ -8221,7 +8220,7 @@
 					(unit 1)
 				)
 			)
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "Reset1")
 					(unit 1)
@@ -8300,7 +8299,7 @@
 			(uuid "83b8af24-d87a-4e27-ab7a-b4fee67b6b5d")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "R11")
 					(unit 1)
@@ -8379,7 +8378,7 @@
 			(uuid "6a0e491d-40c8-434e-aeba-180c8d4968ff")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "R6")
 					(unit 1)
@@ -8482,7 +8481,7 @@
 					(unit 1)
 				)
 			)
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "C6")
 					(unit 1)
@@ -8553,7 +8552,7 @@
 					(unit 1)
 				)
 			)
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR0120")
 					(unit 1)
@@ -8702,7 +8701,7 @@
 					(unit 1)
 				)
 			)
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "R8")
 					(unit 1)
@@ -8767,7 +8766,7 @@
 			(uuid "815bad7d-cb22-418f-9993-03b81e2068eb")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR09")
 					(unit 1)
@@ -8838,7 +8837,7 @@
 					(unit 1)
 				)
 			)
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR0121")
 					(unit 1)
@@ -8973,7 +8972,7 @@
 			(uuid "ddc2c900-dc4c-41d8-b8d8-1e27aa0ca196")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "U2")
 					(unit 1)
@@ -9038,7 +9037,7 @@
 			(uuid "b52bec4e-8b96-4a4b-94ad-3dc4a991813f")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR019")
 					(unit 1)
@@ -9102,7 +9101,7 @@
 			)
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "H2")
 					(unit 1)
@@ -9266,7 +9265,7 @@
 			(uuid "c076d28f-5b7b-48ca-a32c-976fa5363593")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "C7")
 					(unit 1)
@@ -9363,7 +9362,7 @@
 			(uuid "91bd7128-922d-416c-85c3-6809ff5ea857")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "C14")
 					(unit 1)
@@ -9428,7 +9427,7 @@
 			(uuid "f7345043-a065-4a76-a473-658dbe5178e3")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR04")
 					(unit 1)
@@ -9492,7 +9491,7 @@
 			)
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "H6")
 					(unit 1)
@@ -9557,7 +9556,7 @@
 			(uuid "bb1b6240-e795-4203-9b45-bba211dc2ffc")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR010")
 					(unit 1)
@@ -9628,7 +9627,7 @@
 					(unit 1)
 				)
 			)
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR0116")
 					(unit 1)
@@ -9693,7 +9692,7 @@
 			(uuid "bffc925c-2622-47f7-bdcc-a6713b616a32")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR012")
 					(unit 1)
@@ -9758,7 +9757,7 @@
 			(uuid "696cf89d-285d-4a99-9735-93612f453e90")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR011")
 					(unit 1)
@@ -9822,7 +9821,7 @@
 			)
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "H4")
 					(unit 1)
@@ -9887,7 +9886,7 @@
 			(uuid "e7bdf2b6-1c7e-44f5-8c05-a893fa1a996f")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR07")
 					(unit 1)
@@ -9984,7 +9983,7 @@
 			(uuid "a8095db7-46b1-444d-a1f2-cb4450908ba6")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "C3")
 					(unit 1)
@@ -10055,7 +10054,7 @@
 					(unit 1)
 				)
 			)
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR0123")
 					(unit 1)
@@ -10126,7 +10125,7 @@
 					(unit 1)
 				)
 			)
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR0112")
 					(unit 1)
@@ -10197,7 +10196,7 @@
 					(unit 1)
 				)
 			)
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR0119")
 					(unit 1)
@@ -10432,7 +10431,7 @@
 			(uuid "5149bc1a-b2da-41ab-82d4-6d9b19c120bf")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR0105")
 					(unit 1)
@@ -10511,7 +10510,7 @@
 			(uuid "85fa1ba1-2a29-4e4f-99ef-3bff6008a175")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "R10")
 					(unit 1)
@@ -10576,7 +10575,7 @@
 			(uuid "c2d8b762-b9d9-43eb-8a98-d2d5a5c0d1a4")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR0102")
 					(unit 1)
@@ -10709,7 +10708,7 @@
 			(uuid "9c577057-a6ef-40e5-a699-caef3cf95488")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "#PWR018")
 					(unit 1)
@@ -10722,9 +10721,9 @@
 		(at 63.5 139.7 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f72f674c-b8f6-48b3-8888-b07b9b03b171")
 		(property "Reference" "U3"
@@ -10939,7 +10938,7 @@
 			(uuid "aac63cfa-473f-430f-9291-e2d679aa62ad")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "U3")
 					(unit 1)
@@ -11035,7 +11034,7 @@
 			(uuid "0bcfd98f-a00a-4f25-ae51-cfcf6d915ff5")
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(reference "C15")
 					(unit 1)
@@ -11068,7 +11067,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "SparkFun_Thing_Plus_ESP32-S3_Peripherals.kicad_sch"
+		(property "Sheetfile" "riichi_compass_Peripherals.kicad_sch"
 			(at 205.74 51.3846 0)
 			(effects
 				(font
@@ -11078,7 +11077,7 @@
 			)
 		)
 		(instances
-			(project "SparkFun_Thing_Plus_ESP32-S3"
+			(project "riichi_compass"
 				(path "/e3dd3ae4-244d-4cba-9cca-5d2abf83f29a"
 					(page "2")
 				)

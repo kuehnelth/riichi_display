@@ -60,7 +60,7 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "SparkFun_Thing_Plus_ESP32-S3.kicad_prl",
+    "filename": "riichi_compass.kicad_prl",
     "version": 5
   },
   "net_inspector_panel": {
