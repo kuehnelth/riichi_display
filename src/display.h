@@ -1,2 +1,5 @@
 void init_display(void);
-void showPartialUpdate();
+bool showPartialUpdate(void);
+bool showFullUpdate(void);
+void connectScreen(void);
+void standbyScreen(void);

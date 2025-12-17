@@ -20,6 +20,7 @@ typedef struct {
     uint8_t round;
     uint8_t honba_count;
     uint8_t riichi_count;
+    uint8_t old_active;
     uint8_t active;
     Player players[4];
 } Game_state;

@@ -9,12 +9,11 @@
 #include "game_state.h"
 #include "display.h"
 
-#define SERVICE_UUID "4fafc201-1fb5-459e-8fcc-c5c9c331914b"
-#define CHARACTERISTIC_UUID "beb5483e-36e1-4688-b7f5-ea07361b26a8"
+#define DISPLAY_SERVICE_UUID "bae5e4dd-f2b4-4461-a84c-b7851fb8efd3"
+#define GAME_STATE_CHARACTERISTIC_UUID "bab40271-33ea-48dc-a145-638361f54d2b"
 
 BLECharacteristic *pCharacteristic;
 bool deviceConnected = false;
-int value = 0;
 
 extern char names[4][32];
 extern int scores[4];
@@ -24,20 +23,21 @@ class MyServerCallbacks : public BLEServerCallbacks {
 	void onConnect(BLEServer *pServer)
 	{
 		deviceConnected = true;
-		Serial.println("connect");
+		//Serial.println("connect");
 	};
 	void onDisconnect(BLEServer *pServer)
 	{
 		deviceConnected = false;
 		pServer->startAdvertising(); // restart advertising after disconnecting
-		Serial.println("disconnect");
+		//Serial.println("disconnect");
+		connectScreen();
 	}
 };
 
 class MyCallbacks : public BLECharacteristicCallbacks {
 	void onWrite(BLECharacteristic *pCharacteristic)
 	{
-		Serial.println("Client is writing the value");
+		//Serial.println("Client is writing the value");
 		String value = pCharacteristic->getValue();
 		//Serial.print(value);
 		char *str = strdup(value.c_str());
@@ -57,7 +57,7 @@ class MyCallbacks : public BLECharacteristicCallbacks {
 				sscanf(str, "%" SCNu8 " %" SCNu8 " %" SCNu8, &game_state.round,
 				       &game_state.riichi_count, &game_state.honba_count);
 				state[type] = atoi(str);
-				Serial.printf("state[%d] = %d\n", type, state[type]);
+				//Serial.printf("state[%d] = %d\n", type, state[type]);
 				item++;
 				type = 0;
 			} else {
@@ -77,7 +77,7 @@ class MyCallbacks : public BLECharacteristicCallbacks {
 					player->wind = (Wind)wind;
 					strcpy(names[id], str);
 					scores[id] = score;
-					Serial.printf("id %d name %s s %d\n", id, str, score);
+					//Serial.printf("id %d name %s s %d\n", id, str, score);
 					break;
 				default:
 					break;
@@ -89,31 +89,35 @@ class MyCallbacks : public BLECharacteristicCallbacks {
 			str = &next[1];
 		}
 		free(bak);
-		showPartialUpdate();
+		showFullUpdate();
 	}
 	void onRead(BLECharacteristic *pCharacteristic)
 	{
-		Serial.println("Client is reading the value");
+		//Serial.println("Client is reading the value");
 	}
 };
 
 void setupBle()
 {
-	BLEDevice::init("ESP32 BLE Server");
+	BLEDevice::init("Riichi Display");
 	BLEServer *pServer = BLEDevice::createServer();
 	pServer->setCallbacks(new MyServerCallbacks());
-	BLEService *pService = pServer->createService(SERVICE_UUID);
+	BLEService *pService = pServer->createService(DISPLAY_SERVICE_UUID);
 
 	pCharacteristic = pService->createCharacteristic(
-		CHARACTERISTIC_UUID, BLECharacteristic::PROPERTY_READ | BLECharacteristic::PROPERTY_WRITE |
-					     BLECharacteristic::PROPERTY_NOTIFY);
+		GAME_STATE_CHARACTERISTIC_UUID,
+		BLECharacteristic::PROPERTY_WRITE);
 
 	pCharacteristic->setCallbacks(new MyCallbacks());
-	pCharacteristic->setValue("Hello BLE Client");
 	pService->start();
 
 	BLEAdvertising *pAdvertising = BLEDevice::getAdvertising();
-	pAdvertising->addServiceUUID(SERVICE_UUID);
+	pAdvertising->addServiceUUID(DISPLAY_SERVICE_UUID);
 	pAdvertising->start();
-	Serial.println("BLE server started, advertising...");
+	//Serial.println("BLE server started, advertising...");
+}
+
+void stopBle(void)
+{
+	BLEDevice::deinit(true);
 }

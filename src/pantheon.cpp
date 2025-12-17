@@ -1,18 +1,79 @@
+#include "HardwareSerial.h"
+#include "esp32-hal-gpio.h"
+#include "esp32-hal.h"
+#include "esp_sleep.h"
 #include <Arduino.h>
 
 #include "display.h"
 #include "ble.h"
 #include "game_state.h"
-#include <cstdio>
 #include <cstring>
+#include <unistd.h>
 
+
+#include "USB.h"
+#if !ARDUINO_USB_CDC_ON_BOOT
+USBCDC USBSerial;
+#endif
+
+#undef Serial
+#define Serial USBSerial
+
+const int touchPins[] = {2, 15, 14, 12};
+void gotTouch(int i)
+{
+	int state = touchInterruptGetLastStatus(touchPins[i]);
+	Serial.printf("touch %d state %d\n", i, state);
+	if (state)
+		game_state.active = i;
+	else
+		game_state.active = 0xff;
+}
+
+void gotTouch1() {
+	gotTouch(0);
+}
+
+void gotTouch2() {
+	gotTouch(1);
+}
+
+void gotTouch3() {
+	gotTouch(2);
+}
+
+void gotTouch4() {
+	gotTouch(3);
+}
 
 void setup()
 {
+	int i;
+	#define TOUCH_THRESHOLD 40
 	Serial.begin(115200);
+	USB.productName("riichi display");
+
+        USB.begin();
+        USBSerial.begin();
+
+	touchSetDefaultThreshold(TOUCH_THRESHOLD);
+
+	/*
+	// doesn't work for whatever reason
+	for (long i = 0; i < 4; i++)
+		touchAttachInterruptArg(touchPins[i],  gotTouch, (void*)i, 0);
+	*/
+
+	touchAttachInterrupt(touchPins[0],  gotTouch1, 0);
+	touchAttachInterrupt(touchPins[1],  gotTouch2, 0);
+	touchAttachInterrupt(touchPins[2],  gotTouch3, 0);
+	touchAttachInterrupt(touchPins[3],  gotTouch4, 0);
+
+	for (long i = 0; i < 4; i++)
+		touchSleepWakeUpEnable(touchPins[i], TOUCH_THRESHOLD);
 
 	setupBle();
-	Serial.print("init display");
+	Serial.println("init display");
 
 	game_state.round = 1;
 	game_state.active = 0xff;
@@ -29,28 +90,46 @@ void setup()
 	game_state.players[3].score = 30000;
 	game_state.players[3].wind = NORTH;
 
+	Serial.println("call init display");
 	init_display();
+	Serial.println("setup done");
 
 }
 
-const int touchPins[] = {2, 15, 14, 12};
+#include <esp_bt.h>
+#include <esp_wifi.h>
+
+static uint8_t old_active = 0xff;
 void loop()
 {
-	uint8_t old_active = game_state.active;
-	int i;
-
-	game_state.active = 0xff;
-	for (i = 0; i < 4; i++) {
-		uint8_t touch = touchRead(touchPins[i]);
-		if (touch < 60) {
-			game_state.active = i;
-			break;
+	bool ret;
+	if (deviceConnected) {
+		if (game_state.old_active != game_state.active) {
+			ret = showPartialUpdate();
+			delay(100);
+		} else {
+			delay(100);
 		}
+	} else {
+		connectScreen();
+		delay(3000);
+		Serial.println("loop");
+		/*
+		if (!deviceConnected) {
+			standbyScreen();
+			stopBle();
+			esp_sleep_disable_bt_wakeup();
+			esp_sleep_disable_wifi_beacon_wakeup();
+			esp_deep_sleep_disable_rom_logging();
+			btStop();
+			esp_wifi_stop();
+			esp_bt_controller_disable();
+			Serial.flush();
+			Serial.end();
+			esp_deep_sleep_start();
+		}
+		*/
 	}
 
-	if (old_active != game_state.active)
-		showPartialUpdate();
-	delay(1000);
-	//delay(1000000);
 	return;
 }
