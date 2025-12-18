@@ -12,13 +12,14 @@
 
 
 #include "USB.h"
+/*
 #if !ARDUINO_USB_CDC_ON_BOOT
 USBCDC USBSerial;
 #endif
 
 #undef Serial
 #define Serial USBSerial
-
+*/
 const int touchPins[] = {2, 15, 14, 12};
 void gotTouch(int i)
 {
@@ -50,11 +51,11 @@ void setup()
 {
 	int i;
 	#define TOUCH_THRESHOLD 40
-	Serial.begin(115200);
-	USB.productName("riichi display");
+	//USB.productName("riichi display");
 
-        USB.begin();
-        USBSerial.begin();
+        //USB.begin();
+	Serial.begin(115200);
+        //USBSerial.begin();
 
 	touchSetDefaultThreshold(TOUCH_THRESHOLD);
 
@@ -63,7 +64,7 @@ void setup()
 	for (long i = 0; i < 4; i++)
 		touchAttachInterruptArg(touchPins[i],  gotTouch, (void*)i, 0);
 	*/
-
+/*
 	touchAttachInterrupt(touchPins[0],  gotTouch1, 0);
 	touchAttachInterrupt(touchPins[1],  gotTouch2, 0);
 	touchAttachInterrupt(touchPins[2],  gotTouch3, 0);
@@ -71,6 +72,7 @@ void setup()
 
 	for (long i = 0; i < 4; i++)
 		touchSleepWakeUpEnable(touchPins[i], TOUCH_THRESHOLD);
+*/
 
 	setupBle();
 	Serial.println("init display");

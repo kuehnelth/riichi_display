@@ -124,15 +124,19 @@ static void display_print(const GFXfont *f, const char *s, alignH ah, alignV av,
 
 
 #include "display.h"
+/*
 #include "USB.h"
 extern USBCDC USBSerial;
 #undef Serial
 #define Serial USBSerial
+*/
 
 #define LED_1 38
 #define LED_2 37
 #define LED_3 36
 #define LED_4 35
+
+SPIClass hspi(HSPI);
 
 void init_display(void)
 {
@@ -147,13 +151,16 @@ void init_display(void)
 	pinMode(DC_PIN, OUTPUT);
 	//Serial.printf("CS %d res %d DC %d\n", CS_PIN, RES_PIN, DC_PIN);
 
-	display.init(0, true, 50, false);
+	  hspi.begin(12, 18, 11, 7); 
+         display.epd2.selectSPI(hspi, SPISettings(4000000, MSBFIRST, SPI_MODE0));
+
+	display.init(115200, true, 50, false);
 	//display.firstPage();
 	//display.nextPage();
 	display.setPartialWindow(50, 0, 300, 300);
 	if (display.epd2.hasFastPartialUpdate) {
 
-		connectScreen();
+		//connectScreen();
 		//standbyScreen();
 	}
 	display.hibernate();
