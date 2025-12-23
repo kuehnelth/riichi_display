@@ -20,15 +20,22 @@ USBCDC USBSerial;
 #undef Serial
 #define Serial USBSerial
 */
-const int touchPins[] = {2, 15, 14, 12};
+const int touchPins[] = {7, 6, 5, 4};
+const int ledPins[] = {38, 37, 36, 35};
+const int buttonPins[] = {42, 41, 40, 39};
 void gotTouch(int i)
 {
 	int state = touchInterruptGetLastStatus(touchPins[i]);
 	Serial.printf("touch %d state %d\n", i, state);
-	if (state)
+	if (state) {
 		game_state.active = i;
-	else
+		//analogWrite(ledPins[i], 10);
+		digitalWrite(ledPins[i], 1);
+	} else {
 		game_state.active = 0xff;
+		//analogWrite(ledPins[i], 0);
+		digitalWrite(ledPins[i], 0);
+	}
 }
 
 void gotTouch1() {
@@ -47,10 +54,16 @@ void gotTouch4() {
 	gotTouch(3);
 }
 
+void buttonISR(void *arg) {
+	int i = (int)arg;
+
+	Serial.printf("button %d\n", i);
+}
+
 void setup()
 {
 	int i;
-	#define TOUCH_THRESHOLD 40
+	#define TOUCH_THRESHOLD 10
 	//USB.productName("riichi display");
 
         //USB.begin();
@@ -64,15 +77,23 @@ void setup()
 	for (long i = 0; i < 4; i++)
 		touchAttachInterruptArg(touchPins[i],  gotTouch, (void*)i, 0);
 	*/
-/*
+
 	touchAttachInterrupt(touchPins[0],  gotTouch1, 0);
 	touchAttachInterrupt(touchPins[1],  gotTouch2, 0);
 	touchAttachInterrupt(touchPins[2],  gotTouch3, 0);
 	touchAttachInterrupt(touchPins[3],  gotTouch4, 0);
 
+	for (long i = 0; i < 4; i++) {
+		pinMode(buttonPins[i], INPUT_PULLUP);
+
+		pinMode(ledPins[i], OUTPUT);
+		digitalWrite(ledPins[i], 1);
+		attachInterruptArg(buttonPins[i], buttonISR, (void*)i, RISING);
+	}
+
 	for (long i = 0; i < 4; i++)
 		touchSleepWakeUpEnable(touchPins[i], TOUCH_THRESHOLD);
-*/
+
 
 	setupBle();
 	Serial.println("init display");
@@ -96,6 +117,10 @@ void setup()
 	init_display();
 	Serial.println("setup done");
 
+	for (long i = 0; i < 4; i++) {
+		digitalWrite(ledPins[i], 0);
+	}
+
 }
 
 #include <esp_bt.h>
@@ -114,9 +139,9 @@ void loop()
 		}
 	} else {
 		connectScreen();
-		delay(3000);
+		delay(30000);
 		Serial.println("loop");
-		/*
+		
 		if (!deviceConnected) {
 			standbyScreen();
 			stopBle();
@@ -130,7 +155,7 @@ void loop()
 			Serial.end();
 			esp_deep_sleep_start();
 		}
-		*/
+		
 	}
 
 	return;

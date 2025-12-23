@@ -131,20 +131,10 @@ extern USBCDC USBSerial;
 #define Serial USBSerial
 */
 
-#define LED_1 38
-#define LED_2 37
-#define LED_3 36
-#define LED_4 35
-
 SPIClass hspi(HSPI);
 
 void init_display(void)
 {
-	  pinMode(LED_1, OUTPUT);
-  pinMode(LED_2, OUTPUT);
-  pinMode(LED_3, OUTPUT);
-  pinMode(LED_4, OUTPUT);
-
 	Serial.printf("CS %d res %d DC %d\n", CS_PIN, RES_PIN, DC_PIN);
 	pinMode(CS_PIN, OUTPUT);
 	pinMode(RES_PIN, OUTPUT);
