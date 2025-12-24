@@ -3,6 +3,7 @@
 #include <BLEUtils.h>
 
 #include "ble.h"
+#include "game_state.h"
 
 #define DISPLAY_SERVICE_UUID "bae5e4dd-f2b4-4461-a84c-b7851fb8efd3"
 #define GAME_STATE_CHARACTERISTIC_UUID "bab40271-33ea-48dc-a145-638361f54d2b"
@@ -28,8 +29,8 @@ class Callbacks : public BLECharacteristicCallbacks {
 	{
 		String value = pCharacteristic->getValue();
 		char *str = strdup(value.c_str());
-		char *bak = str;
-		free(bak);
+		game_state_parse(str);
+		free(str);
 	}
 };
 
