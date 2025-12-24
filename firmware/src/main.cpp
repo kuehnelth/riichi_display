@@ -1,5 +1,6 @@
 #include <Arduino.h>
 
+#include "ble.h"
 #include "io.h"
 
 void setup()
@@ -7,10 +8,8 @@ void setup()
 	Serial.begin(115200);
 
 	init_io();
+	init_ble();
 
-	//init io
-	//led on
-	//setupBle();
 	//init display
 	//init game
 
