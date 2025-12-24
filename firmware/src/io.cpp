@@ -25,6 +25,17 @@ static void buttonISR(void *arg) {
 	Serial.printf("button %d\n", i);
 }
 
+void setLED(int led, int state)
+{
+	digitalWrite(ledPins[led], state);
+}
+
+void setLEDs(int state)
+{
+	for (int i = 0; i < 4; i++)
+		digitalWrite(ledPins[i], state);
+}
+
 void init_io(void)
 {
 	int touch_threshold = 40;

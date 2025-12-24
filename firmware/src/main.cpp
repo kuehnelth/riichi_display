@@ -8,6 +8,9 @@ void setup()
 	Serial.begin(115200);
 
 	init_io();
+
+	setLEDs(1);
+	
 	init_ble();
 
 	//init display
@@ -16,6 +19,7 @@ void setup()
 	//led off
 	delay(3000);
 
+	setLEDs(0);
 }
 
 void loop()
