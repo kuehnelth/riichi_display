@@ -11,18 +11,18 @@ NORTH = 3,
 } Wind;
 
 typedef struct {
-    Wind wind;
-    int32_t score;
-    char name[32];
+	Wind wind;
+	int32_t score;
+	char name[32];
 } Player;
 
 typedef struct {
-    uint8_t round;
-    uint8_t honba_count;
-    uint8_t riichi_count;
-    uint8_t old_active;
-    uint8_t active;
-    Player players[4];
+	uint8_t round;
+	uint8_t honba_count;
+	uint8_t riichi_count;
+	uint8_t old_active;
+	uint8_t active;
+	Player players[4];
 } Game_state;
 
 extern Game_state game_state;
