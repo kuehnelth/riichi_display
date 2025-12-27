@@ -6,7 +6,7 @@ static const int touchPins[] = {7, 6, 5, 4};
 static const int ledPins[] = {38, 37, 36, 35};
 static const int buttonPins[] = {42, 41, 40, 39};
 
-static void gotTouch(void *arg)
+static void got_touch(void *arg)
 {
 	int i = (int)arg;
 	int state = touchInterruptGetLastStatus(touchPins[i]);
@@ -19,18 +19,18 @@ static void gotTouch(void *arg)
 	}
 }
 
-static void buttonISR(void *arg) {
+static void button_isr(void *arg) {
 	int i = (int)arg;
 
 	Serial.printf("button %d\n", i);
 }
 
-void setLED(int led, int state)
+void set_led(int led, int state)
 {
 	digitalWrite(ledPins[led], state);
 }
 
-void setLEDs(int state)
+void set_leds(int state)
 {
 	for (int i = 0; i < 4; i++)
 		digitalWrite(ledPins[i], state);
@@ -44,10 +44,10 @@ void init_io(void)
 
 	for (int i = 0; i < 4; i++) {
 		pinMode(buttonPins[i], INPUT_PULLUP);
-		touchAttachInterruptArg(touchPins[i],  gotTouch, (void*)i, 0);
+		touchAttachInterruptArg(touchPins[i],  got_touch, (void*)i, 0);
 
 		pinMode(ledPins[i], OUTPUT);
 		digitalWrite(ledPins[i], 0);
-		attachInterruptArg(buttonPins[i], buttonISR, (void*)i, RISING);
+		attachInterruptArg(buttonPins[i], button_isr, (void*)i, RISING);
 	}
 }

@@ -3,7 +3,7 @@
 
 void init_io(void);
 
-void setLED(int led, int state);
-void setLEDs(int state);
+void set_led(int led, int state);
+void set_leds(int state);
 
 #endif // IO_H_

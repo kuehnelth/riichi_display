@@ -9,7 +9,7 @@ void setup()
 
 	init_io();
 
-	setLEDs(1);
+	set_leds(1);
 	
 	init_ble();
 
@@ -19,7 +19,7 @@ void setup()
 	//led off
 	delay(3000);
 
-	setLEDs(0);
+	set_leds(0);
 }
 
 void loop()
