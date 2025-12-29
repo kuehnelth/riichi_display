@@ -1,7 +1,9 @@
 #include <Arduino.h>
 
 #include "ble.h"
+#include "display.h"
 #include "io.h"
+#include "game_state.h"
 
 void setup()
 {
@@ -13,38 +15,28 @@ void setup()
 	
 	init_ble();
 
-	//init display
-	//init game
-
-	//led off
-	delay(3000);
+	init_display();
 
 	set_leds(0);
 }
 
 void loop()
 {
-	/*
-	bool ret;
 	if (deviceConnected) {
-		if (game_state.old_active != game_state.active) {
-			ret = showPartialUpdate();
-			delay(100);
-		} else {
-			delay(100);
-		}
+		update_game_screen();
+		delay(100);
 	} else {
-		connectScreen();
-		delay(30000);
-		Serial.println("loop");
+		show_connect_screen();
+		delay(60000);
 
 		if (!deviceConnected) {
-			standbyScreen();
+			show_standby_screen();
+			deinit_ble();
+			Serial.flush();
+			Serial.end();
+			
+			esp_deep_sleep_start();
 		}
-
-	}*/
-	Serial.println("loop");
-	delay(3000);
-
+	}
 	return;
 }
