@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include <BLEDevice.h>
 #include <BLEServer.h>
 #include <BLEUtils.h>
@@ -15,10 +16,12 @@ class ServerCallbacks : public BLEServerCallbacks {
 	void onConnect(BLEServer *pServer)
 	{
 		deviceConnected = true;
+		Serial.println("connected");
 	};
 	void onDisconnect(BLEServer *pServer)
 	{
 		deviceConnected = false;
+		Serial.println("disconnected");
 		// restart advertising after disconnecting
 		pServer->startAdvertising();
 	}
@@ -29,6 +32,8 @@ class Callbacks : public BLECharacteristicCallbacks {
 	{
 		String value = pCharacteristic->getValue();
 		char *str = strdup(value.c_str());
+
+		Serial.println("received game state");
 		game_state_parse(str);
 		free(str);
 	}
