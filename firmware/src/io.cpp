@@ -1,6 +1,7 @@
 #include <Arduino.h>
 
 #include "io.h"
+#include "game_state.h"
 
 static const int touchPins[] = {7, 6, 5, 4};
 static const int ledPins[] = {38, 37, 36, 35};
@@ -14,8 +15,10 @@ static void got_touch(void *arg)
 	Serial.printf("touch %d state %d\n", i, state);
 	if (state) {
 		digitalWrite(ledPins[i], 1);
+		game_state.active = i;
 	} else {
 		digitalWrite(ledPins[i], 0);
+		game_state.active = 0xff;
 	}
 }
 

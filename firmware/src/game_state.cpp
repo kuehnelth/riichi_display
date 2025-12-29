@@ -51,6 +51,9 @@ void game_state_parse(char *str)
 		}
 		str = &next[1];
 	}
+
+	game_state.active = 0xff;
+	game_state.old_active = 0xff;
 }
 
 void dump_game_state(void)
