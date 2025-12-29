@@ -23,6 +23,7 @@ typedef struct {
 	uint8_t old_active;
 	uint8_t active;
 	Player players[4];
+	bool need_redraw;
 } Game_state;
 
 extern Game_state game_state;
